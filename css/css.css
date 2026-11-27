@@ -64,7 +64,7 @@ a { color: inherit; }
   text-shadow: 0 2px 12px rgba(0,0,0,.45);
 }
 .hero-text h1 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 600; }
-.hero-text p { margin: 0; font-size: .85rem; letter-spacing: .2em;  text-transform: uppercase; }
+.hero-text p { margin: 0; font-size: .85rem; letter-spacing: .2em;  text-transforme: uppercase }
 
 /* ---------- Notre galerie ---------- */
 .intro {
