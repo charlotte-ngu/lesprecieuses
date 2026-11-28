@@ -17,7 +17,7 @@ body {
   background: var(--creme);
   line-height: 1.6;
 }
-img { display: block; max-width: 100%; background: var(--noir); }
+img { display: block; max-width: 100%; height: auto; background: var(--noir); }
 h1, h2, h3 { font-family: var(--serif); margin: 0; }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--creme); outline-offset: 3px; }
