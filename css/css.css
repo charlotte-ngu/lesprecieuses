@@ -234,7 +234,7 @@ a { color: inherit; }
 .contact textarea { min-height: 50px; padding: 14px 20px; resize: vertical; }
 
 .contact button {
-  width: 100%; max-width: 358px; height: 72px; margin-top: 4px;
+  width: 100%; max-width: 358px; height: 72px; margin: 4px auto 0;
   border: 0; border-radius: 20px;
   background: rgba(255, 255, 255, .6);
   color: #ede6d3;
