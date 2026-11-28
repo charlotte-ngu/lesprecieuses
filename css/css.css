@@ -231,7 +231,7 @@ a { color: inherit; }
   font: inherit; font-size: .85rem; font-weight: 600;
 }
 .contact ::placeholder { color: #ede6d3; opacity: 1; font-weight: 600; }
-.contact textarea { min-height: 50px; resize: vertical; }
+.contact textarea { min-height: 50px; padding: 14px 20px; resize: vertical; }
 
 .contact button {
   width: 100%; max-width: 358px; height: 72px; margin-top: 4px;
