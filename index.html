@@ -20,7 +20,7 @@
 <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu">
   <span></span><span></span><span></span>
 </button>
-    <nav class="nav" aria-label="Navigation principale">
+    <nav class="nav" id="menu" aria-label="Navigation principale">
       <a href="#accueil">Accueil</a>
       <a href="#galerie">Galerie</a>
       <a href="#collections">Collections</a>
@@ -175,17 +175,28 @@
     </div>
   </footer>
 
-  <script>
-    // Carrousel
-    const slides = document.querySelectorAll('.slide');
-    let current = 0;
-    function show(i) {
-      slides[current].classList.remove('active');
-      current = (i + slides.length) % slides.length;
-      slides[current].classList.add('active');
-    }
-    document.querySelector('.prev').addEventListener('click', () => show(current - 1));
-    document.querySelector('.next').addEventListener('click', () => show(current + 1));
-  </script>
+<script>
+  // Carrousel
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  function show(i) {
+    slides[current].classList.remove('active');
+    current = (i + slides.length) % slides.length;
+    slides[current].classList.add('active');
+  }
+  document.querySelector('.prev').addEventListener('click', () => show(current - 1));
+  document.querySelector('.next').addEventListener('click', () => show(current + 1));
+
+  // Menu burger
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  const toggle = o => {
+    burger.setAttribute('aria-expanded', o);
+    menu.classList.toggle('open', o);
+  };
+  burger.addEventListener('click', () => toggle(burger.getAttribute('aria-expanded') !== 'true'));
+  menu.addEventListener('click', e => { if (e.target.closest('a')) toggle(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') toggle(false); });
+</script>
 </body>
 </html>
