@@ -50,8 +50,8 @@
     </section>
 
     <!-- CARROUSEL -->
-    <section class="slider" aria-label="Pièces de la galerie">
-      <button class="arrow prev" aria-label="Pièce précédente">&#8592;</button>
+    <section class="slider" aria-roledescription="carrousel" aria-label="Pièces de la galerie">
+      <button type="button" class="arrow prev" aria-label="Pièce précédente">&#8592;</button>
       <div class="slides">
         <img class="slide active" src="images/pendantif-femme.png" alt="Pendentif de femme" loading="lazy">
         <img class="slide" src="images/pendantif-ailes-bleues.png" alt="Pendentif aux ailes bleues" loading="lazy">
@@ -60,8 +60,9 @@
         <img class="slide" src="images/collier-or-et-rose.png" alt="Collier d’or et de pierres roses" loading="lazy">
         <img class="slide" src="images/broche-fleur-violette.png" alt="Broche fleur violette" loading="lazy">
       </div>
-      <button class="arrow next" aria-label="Pièce suivante">&#8594;</button>
-    </section>
+      <button type="button" class="arrow next" aria-label="Pièce suivante">&#8594;</button>
+<p class="sr-only" id="slide-status" aria-live="polite"></p>
+</section>
 
     <!-- COLLECTIONS -->
     <section class="collections" id="collections">
@@ -179,11 +180,13 @@
   // Carrousel
   const slides = document.querySelectorAll('.slide');
   let current = 0;
-  function show(i) {
-    slides[current].classList.remove('active');
-    current = (i + slides.length) % slides.length;
-    slides[current].classList.add('active');
-  }
+function show(i) {
+  slides[current].classList.remove('active');
+  current = (i + slides.length) % slides.length;
+  slides[current].classList.add('active');
+  document.getElementById('slide-status').textContent =
+    'Image ' + (current + 1) + ' sur ' + slides.length + ' : ' + slides[current].alt;
+}
   document.querySelector('.prev').addEventListener('click', () => show(current - 1));
   document.querySelector('.next').addEventListener('click', () => show(current + 1));
 
